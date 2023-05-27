@@ -7,7 +7,7 @@ import {
 } from "../actions/queryActions";
 import RenderHighlightedTitle from "./RenderHighlightedTitle";
 import { flatQueries } from "../utils/utils";
-import "../css/sidebar.css";
+import "../style/css/sidebar.css";
 
 const Sidebar = ({ setIndex, findValue }) => {
   const dispatch = useDispatch();

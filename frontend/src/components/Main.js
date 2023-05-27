@@ -3,7 +3,7 @@ import QueryList from "./QueryList";
 import Sidebar from "./Sidebar";
 import SearchBar from "./SearchBar";
 import Find from "./Find";
-import { ReactComponent as Logo } from "../assets/download.svg";
+import { ReactComponent as Logo } from "../style/assets/download.svg";
 
 const Main = () => {
   const [findValue, setFindValue] = useState("");

@@ -1,6 +1,6 @@
 import React from "react";
 import RenderHighlightedTitle from "./RenderHighlightedTitle";
-import "../css/links.css";
+import "../style/css/links.css";
 
 const Query = ({ query, findValue }) => {
   return (
