@@ -3,22 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchQueries } from "../actions/queryActions";
 import { flatQueries } from "../utils/utils";
 
-const SearchBar = ({
-  searchParam,
-  setSearchParam,
-  index,
-  isLoading,
-  setIsLoading,
-}) => {
+const SearchBar = ({ searchParam, setSearchParam, index, isLoading }) => {
   const queriesResults = useSelector((state) => state.queries.queries);
   const dispatch = useDispatch();
 
   const queries = flatQueries(queriesResults);
 
   const handleClick = () => {
-    setIsLoading(true);
     dispatch(fetchQueries(searchParam));
-    setIsLoading(false);
   };
 
   useEffect(() => {

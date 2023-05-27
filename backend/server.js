@@ -15,7 +15,7 @@ app.get("/queries", async (req, res) => {
   const searchParam = req.query.q;
   try {
     const response = await axios.get(
-      `https://api.duckduckgo.com/?q=${searchParam}&format=json`
+      `https://api.duckduckgo.com/?q=${searchParam}&format=json&skip_disambig=1`
     );
     const returnArr = response.data.Results.map((res) => {
       return { FirstURL: res.FirstURL, Text: res.Text };

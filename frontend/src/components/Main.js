@@ -17,12 +17,15 @@ const Main = () => {
       <Logo className="content-title" />
       <SearchBar
         isLoading={isLoading}
-        setIsLoading={setIsLoading}
         searchParam={searchParam}
         setSearchParam={setSearchParam}
         index={index}
       />
-      <QueryList findValue={findValue} isLoading={isLoading} />
+      <QueryList
+        findValue={findValue}
+        isLoading={isLoading}
+        setIsLoading={setIsLoading}
+      />
       <Sidebar findValue={findValue} setIndex={setIndex} />
     </div>
   );

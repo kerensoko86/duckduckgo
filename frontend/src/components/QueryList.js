@@ -7,7 +7,7 @@ import Pagination from "./Pagination.js";
 
 import { itemsPerPage } from "../utils/utils.js";
 
-const QueryList = ({ findValue, isLoading }) => {
+const QueryList = ({ findValue, isLoading, setIsLoading }) => {
   const queriesResults = useSelector((state) => state.queries.currentQueries);
   let queries = Object.values(queriesResults)[0];
 
@@ -17,8 +17,10 @@ const QueryList = ({ findValue, isLoading }) => {
 
   useEffect(() => {
     if (queries?.length > 0) {
+      setIsLoading(true);
       fetchData(currentPage);
       setIsResults(true);
+      setIsLoading(false);
     } else {
       setIsResults(false);
     }
@@ -36,6 +38,7 @@ const QueryList = ({ findValue, isLoading }) => {
   return (
     <>
       {isResults &&
+        !isLoading &&
         data &&
         data.map((query, index) => (
           <Query query={query} key={index} findValue={findValue} />
