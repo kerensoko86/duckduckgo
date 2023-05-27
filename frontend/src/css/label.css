@@ -1,0 +1,17 @@
+.label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin: 8px;
+  padding: 10px;
+}
+
+.label:hover {
+  color: #555;
+}
+
+.label::after {
+  content: ":";
+  margin-left: 4px;
+  color: #777;
+}
